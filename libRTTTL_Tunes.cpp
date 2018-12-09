@@ -31,13 +31,6 @@ int notes[] = { 0,
 2093, 2217, 2349, 2489, 2637, 2794, 2960, 3136, 3322, 3520, 3729, 3951
 };
 
-//char *song = "PrinceIgor:d=32,o=6,b=40:16c,16c,4g,f,g,16d#,d,c,d,d#,4f,16g,16f,d#,d,16g5,16g5,4c,d#,f,16d#,d,c,d,c,8a#.5";
-//char *song = "Halloween:d=4,o=5,b=180:32p,8d6,8g,8g,8d6,8g,8g,8d6,8g,8d#6,8g,8d6,8g,8g,8d6,8g,8g,8d6,8g,8d#6,8g,8c#6,8f#,8f#,8c#6,8f#,8f#,8c#6,8f#,8d6,8f#,8c#6,8f#,8f#,8c#6,8f#,8f#,8c#6,8f#,8d6,8f#";
-char *song = "JamesBond:d=4,o=5,b=80:32p,16c#6,32d#6,32d#6,16d#6,8d#6,16c#6,16c#6,16c#6,16c#6,32e6,32e6,16e6,8e6,16d#6,16d#6,16d#6,16c#6,32d#6,32d#6,16d#6,8d#6,16c#6,16c#6,16c#6,16c#6,32e6,32e6,16e6,8e6,16d#6,16d6,16c#6,16c#7,c.7,16g#6,16f#6,g#.6";
-//char *song = "KnightRider:d=4,o=5,b=125:16e,16p,16f,16e,16e,16p,16e,16e,16f,16e,16e,16e,16d#,16e,16e,16e,16e,16p,16f,16e,16e,16p,16f,16e,16f,16e,16e,16e,16d#,16e,16e,16e,16d,16p,16e,16d,16d,16p,16e,16d,16e,16d,16d,16d,16c,16d,16d,16d,16d,16p,16e,16d,16d,16p,16e,16d,16e,16d,16d,16d,16c,16d,16d,16d";
-//char *song = "TopGun:d=4,o=4,b=31:32p,16c#,16g#,16g#,32f#,32f,32f#,32f,16d#,16d#,32c#,32d#,16f,32d#,32f,16f#,32f,32c#,16f,d#,16c#,16g#,16g#,32f#,32f,32f#,32f,16d#,16d#,32c#,32d#,16f,32d#,32f,16f#,32f,32c#,g#";
-//char *song = "Dallas:d=4,o=6,b=50:32p,32b.5,8c,32g.5,8g,32c.,16e.,32d.,32e.,16c.,16g.5,16c.,16a.,16g.,32e.,32f.,g,16g.5,16c.,16a.,16g.,32e.,32f.,16g.,32d.,32e.,16c.,16g.5,16c.,32e.,32f.,8d,32g.,g";
-//char *song = "MenBehaving:d=8,o=5,b=125:32p,16f,g#,4c6,a#,16g#,a#.,g#,16g,g#.,g,f.,16f,g#,4c6,a#,16g#,a#.,g#,16f,d#.6,c#6,c.6,16f,g#,4c6,a#,16g#,a#.,g#,16g,g#.,g,16f";
 
 #define isdigit(n) (n >= '0' && n <= '9')
 
@@ -47,14 +40,8 @@ libRTTTL_Tunes::libRTTTL_Tunes(int tonePin) {
 	_tonePin 	=	tonePin;
 }
 
-void libRTTTL_Tunes::playTuneNumber(int number) {
 
-	if (number == 1) {
-		play_RTTTL(song);
-	}
-}
-
-void libRTTTL_Tunes::play_RTTTL(char *p) {
+bool libRTTTL_Tunes::play_RTTTL(char *p) {
 	// Absolutely no error checking in here
 
 	byte default_dur = 4;
@@ -218,5 +205,8 @@ void libRTTTL_Tunes::play_RTTTL(char *p) {
 			*/
 			delay(duration);
 		}
+   if (Serial.available())
+    return false;
 	}
+ return true;
 }
