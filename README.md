@@ -17,4 +17,4 @@ Kirjaston käyttö Arduinolla / Library usage:<br>
 <br>
 - Määrittele buzzerin pinni Arduinolle .ino tiedostossa // Define the buzzer settings in the .ino file<br>
 
-- Poista kommentointi pois halumasi kappaleen kohdalla .cpp tiedostossa. Tänne voit myös lisätä kappaleita. // If you want to change tunes, remove the double slash ("//") from the front of it and add them to the one that you were using before.<br>
+- Poista kommentointi pois halumasi kappaleen kohdalla .cpp tiedostossa. Tänne voit myös lisätä kappaleita. // If you want to change tunes, edit .cpp file and remove the double slash ("//") from the front of it and add them to the one that you were using before.<br>
