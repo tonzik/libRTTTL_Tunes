@@ -51,7 +51,7 @@ void loop() {
     
     delayTimer = millis();
     cur_song++;
-    if (cur_song > num_songs)
+    if (cur_song >= num_songs)
       cur_song = 0;
   }
 
