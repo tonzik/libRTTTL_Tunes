@@ -1,5 +1,7 @@
 /*
  * 
+ *	libRTTTL_Tunes.cpp
+ *
  *  Kirjasto libRTTTL_Tunes on luotu seuraavien tietojen ja koodien perusteella:
  *  The libRTTTL_Tunes library was made based on the following data and code:
  *  
@@ -31,7 +33,6 @@ int notes[] = { 0,
 2093, 2217, 2349, 2489, 2637, 2794, 2960, 3136, 3322, 3520, 3729, 3951
 };
 
-
 #define isdigit(n) (n >= '0' && n <= '9')
 
 
@@ -40,8 +41,7 @@ libRTTTL_Tunes::libRTTTL_Tunes(int tonePin) {
 	_tonePin 	=	tonePin;
 }
 
-
-bool libRTTTL_Tunes::play_RTTTL(char *p) {
+void libRTTTL_Tunes::play_RTTTL(char *p) {
 	// Absolutely no error checking in here
 
 	byte default_dur = 4;
@@ -205,8 +205,5 @@ bool libRTTTL_Tunes::play_RTTTL(char *p) {
 			*/
 			delay(duration);
 		}
-   if (Serial.available())
-    return false;
 	}
- return true;
 }
