@@ -1,5 +1,7 @@
 /*
  * 
+ *	libRTTTL_Tunes.h
+ *
  *  Kirjasto libRTTTL_Tunes on luotu seuraavien tietojen ja koodien perusteella:
  *  The libRTTTL_Tunes library was made based on the following data and code:
  *  
@@ -30,7 +32,7 @@ class libRTTTL_Tunes {
     	libRTTTL_Tunes(int);
 
     	void playTuneNumber(int);
-    	bool play_RTTTL(char *p);
+    	void play_RTTTL(char *p);
 
 	private:
 
