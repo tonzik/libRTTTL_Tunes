@@ -31,7 +31,6 @@ class libRTTTL_Tunes {
   
     	libRTTTL_Tunes(int);
 
-    	void playTuneNumber(int);
     	void play_RTTTL(char *p);
 
 	private:
