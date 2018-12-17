@@ -1,6 +1,6 @@
 /*
  * 
- *	libRTTTL_Tunes.h
+ *  LibRTTTL_Tunes.h
  *
  *  Kirjasto libRTTTL_Tunes on luotu seuraavien tietojen ja koodien perusteella:
  *  The libRTTTL_Tunes library was made based on the following data and code:
